@@ -6,19 +6,21 @@
 //  Copyright © 2020 Фёдор Морев. All rights reserved.
 //
 
-#import "RSViewController.h"
+#import "RSFavouritesViewController.h"
 
-@interface RSViewController ()
+@interface RSFavouritesViewController ()
 
 @end
 
-@implementation RSViewController
+@implementation RSFavouritesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    self.view.backgroundColor = [UIColor redColor];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 

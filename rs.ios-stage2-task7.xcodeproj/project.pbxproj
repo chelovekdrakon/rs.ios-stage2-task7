@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		325F3F0824C8D12000A1B298 /* RSSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 325F3F0724C8D12000A1B298 /* RSSearchTableViewCell.m */; };
+		325F3F0B24C8D13B00A1B298 /* RSSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 325F3F0A24C8D13B00A1B298 /* RSSearchTableViewController.m */; };
 		32797B9E24C775650046D02C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32797B9D24C775650046D02C /* LaunchScreen.storyboard */; };
+		32797BA124C7794F0046D02C /* RSSearchTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32797BA024C7794F0046D02C /* RSSearchTabViewController.m */; };
+		32A9487024C8C86400515D6E /* UIColor+RSColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A9486F24C8C86400515D6E /* UIColor+RSColors.m */; };
 		32E17DD324C7694B005801E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E17DD224C7694B005801E3 /* AppDelegate.m */; };
-		32E17DD924C7694B005801E3 /* RSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E17DD824C7694B005801E3 /* RSViewController.m */; };
+		32E17DD924C7694B005801E3 /* RSFavouritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E17DD824C7694B005801E3 /* RSFavouritesViewController.m */; };
 		32E17DDF24C7694B005801E3 /* rs_ios_stage2_task7.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32E17DDD24C7694B005801E3 /* rs_ios_stage2_task7.xcdatamodeld */; };
 		32E17DE124C7694C005801E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32E17DE024C7694C005801E3 /* Assets.xcassets */; };
 		32E17DE724C7694C005801E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E17DE624C7694C005801E3 /* main.m */; };
@@ -27,12 +31,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		325F3F0624C8D12000A1B298 /* RSSearchTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSSearchTableViewCell.h; sourceTree = "<group>"; };
+		325F3F0724C8D12000A1B298 /* RSSearchTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSSearchTableViewCell.m; sourceTree = "<group>"; };
+		325F3F0924C8D13B00A1B298 /* RSSearchTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSSearchTableViewController.h; sourceTree = "<group>"; };
+		325F3F0A24C8D13B00A1B298 /* RSSearchTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSSearchTableViewController.m; sourceTree = "<group>"; };
 		32797B9D24C775650046D02C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		32797B9F24C7794F0046D02C /* RSSearchTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RSSearchTabViewController.h; path = "rs.ios-stage2-task7/tabs/search/RSSearchTabViewController.h"; sourceTree = SOURCE_ROOT; };
+		32797BA024C7794F0046D02C /* RSSearchTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RSSearchTabViewController.m; path = "rs.ios-stage2-task7/tabs/search/RSSearchTabViewController.m"; sourceTree = SOURCE_ROOT; };
+		32A9486E24C8C86400515D6E /* UIColor+RSColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+RSColors.h"; sourceTree = "<group>"; };
+		32A9486F24C8C86400515D6E /* UIColor+RSColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RSColors.m"; sourceTree = "<group>"; };
 		32E17DCE24C7694B005801E3 /* rs.ios-stage2-task7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rs.ios-stage2-task7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E17DD124C7694B005801E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		32E17DD224C7694B005801E3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		32E17DD724C7694B005801E3 /* RSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSViewController.h; sourceTree = "<group>"; };
-		32E17DD824C7694B005801E3 /* RSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSViewController.m; sourceTree = "<group>"; };
+		32E17DD724C7694B005801E3 /* RSFavouritesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSFavouritesViewController.h; sourceTree = "<group>"; };
+		32E17DD824C7694B005801E3 /* RSFavouritesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSFavouritesViewController.m; sourceTree = "<group>"; };
 		32E17DDE24C7694B005801E3 /* rs_ios_stage2_task7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = rs_ios_stage2_task7.xcdatamodel; sourceTree = "<group>"; };
 		32E17DE024C7694C005801E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32E17DE524C7694C005801E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +72,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		325F3F0524C8D0E500A1B298 /* search */ = {
+			isa = PBXGroup;
+			children = (
+				32797B9F24C7794F0046D02C /* RSSearchTabViewController.h */,
+				32797BA024C7794F0046D02C /* RSSearchTabViewController.m */,
+				325F3F0C24C8D14F00A1B298 /* table */,
+			);
+			path = search;
+			sourceTree = "<group>";
+		};
+		325F3F0C24C8D14F00A1B298 /* table */ = {
+			isa = PBXGroup;
+			children = (
+				325F3F0924C8D13B00A1B298 /* RSSearchTableViewController.h */,
+				325F3F0A24C8D13B00A1B298 /* RSSearchTableViewController.m */,
+				325F3F0624C8D12000A1B298 /* RSSearchTableViewCell.h */,
+				325F3F0724C8D12000A1B298 /* RSSearchTableViewCell.m */,
+			);
+			path = table;
+			sourceTree = "<group>";
+		};
+		32797BA224C779520046D02C /* tabs */ = {
+			isa = PBXGroup;
+			children = (
+				325F3F0524C8D0E500A1B298 /* search */,
+				32E17DD724C7694B005801E3 /* RSFavouritesViewController.h */,
+				32E17DD824C7694B005801E3 /* RSFavouritesViewController.m */,
+			);
+			path = tabs;
+			sourceTree = "<group>";
+		};
+		32A9487124C8C8B300515D6E /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				32A9486E24C8C86400515D6E /* UIColor+RSColors.h */,
+				32A9486F24C8C86400515D6E /* UIColor+RSColors.m */,
+			);
+			path = categories;
+			sourceTree = "<group>";
+		};
 		32E17DC524C7694B005801E3 = {
 			isa = PBXGroup;
 			children = (
@@ -83,13 +135,13 @@
 			children = (
 				32E17DD124C7694B005801E3 /* AppDelegate.h */,
 				32E17DD224C7694B005801E3 /* AppDelegate.m */,
-				32E17DD724C7694B005801E3 /* RSViewController.h */,
-				32E17DD824C7694B005801E3 /* RSViewController.m */,
 				32E17DE024C7694C005801E3 /* Assets.xcassets */,
 				32E17DE524C7694C005801E3 /* Info.plist */,
 				32797B9D24C775650046D02C /* LaunchScreen.storyboard */,
 				32E17DE624C7694C005801E3 /* main.m */,
 				32E17DDD24C7694B005801E3 /* rs_ios_stage2_task7.xcdatamodeld */,
+				32797BA224C779520046D02C /* tabs */,
+				32A9487124C8C8B300515D6E /* categories */,
 			);
 			path = "rs.ios-stage2-task7";
 			sourceTree = "<group>";
@@ -203,8 +255,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				32E17DE724C7694C005801E3 /* main.m in Sources */,
-				32E17DD924C7694B005801E3 /* RSViewController.m in Sources */,
+				32797BA124C7794F0046D02C /* RSSearchTabViewController.m in Sources */,
+				325F3F0B24C8D13B00A1B298 /* RSSearchTableViewController.m in Sources */,
+				32E17DD924C7694B005801E3 /* RSFavouritesViewController.m in Sources */,
+				325F3F0824C8D12000A1B298 /* RSSearchTableViewCell.m in Sources */,
 				32E17DD324C7694B005801E3 /* AppDelegate.m in Sources */,
+				32A9487024C8C86400515D6E /* UIColor+RSColors.m in Sources */,
 				32E17DDF24C7694B005801E3 /* rs_ios_stage2_task7.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

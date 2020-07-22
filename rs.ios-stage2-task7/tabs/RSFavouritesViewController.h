@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RSViewController : UIViewController
+@interface RSFavouritesViewController : UIViewController
 
 
 @end

@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "RSViewController.h"
+#import "UIColor+RSColors.h"
+#import "RSSearchTabViewController.h"
+#import "RSFavouritesViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,11 +19,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    RSSearchTabViewController *searchVC = [RSSearchTabViewController new];
+    searchVC.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemSearch tag:0];
+
+    RSFavouritesViewController *favVC = [RSFavouritesViewController new];
+    favVC.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:1];
     
-    RSViewController *vc = [RSViewController new];
-    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
-    window.rootViewController = nc;
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.tabBar.tintColor = [UIColor whiteColor];
+    tabBarController.navigationItem.hidesBackButton = YES;
+    tabBarController.viewControllers = @[searchVC, favVC];
+    tabBarController.tabBar.barTintColor = [UIColor darkGrayColor];
+    tabBarController.tabBar.unselectedItemTintColor = [UIColor lightGrayColor];
+    tabBarController.tabBar.translucent = NO;
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    window.rootViewController = tabBarController;
     
     self.window = window;
     [self.window makeKeyAndVisible];
