@@ -110,7 +110,7 @@ didStartElement:(NSString *)elementName
             [self.videoDictionary[@"authors"] addObject:self.parsingString];
             self.parsingString = nil;
         } else if ([elementName isEqualToString:@"itunes:duration"]) {
-            self.videoDictionary[@"duration"] = self.parsingString;
+            self.videoDictionary[@"duration"] = [self.parsingString substringFromIndex:3];
             self.parsingString = nil;
         }
         

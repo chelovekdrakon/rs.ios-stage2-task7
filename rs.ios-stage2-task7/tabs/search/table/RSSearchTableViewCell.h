@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RSSearchTableViewCell : UITableViewCell
 
 + (NSString *)cellId;
+@property (nonatomic, strong) NSString *imageCaption;
 
 @end
 

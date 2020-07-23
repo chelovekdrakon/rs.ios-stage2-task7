@@ -96,6 +96,7 @@
     
     cell.textLabel.text = [video.authors componentsJoinedByString:@" and "];
     cell.detailTextLabel.text = video.title;
+    cell.imageCaption = video.duration;
     
     return cell;
 }
