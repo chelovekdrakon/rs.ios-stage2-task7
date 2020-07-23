@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3225885224C8DA96003F4685 /* RSVideosService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3225885124C8DA96003F4685 /* RSVideosService.m */; };
+		3225885A24C8E02B003F4685 /* RSTedXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3225885924C8E02B003F4685 /* RSTedXMLParser.m */; };
+		3225885D24C8E066003F4685 /* RSTedVideoContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3225885C24C8E066003F4685 /* RSTedVideoContent.m */; };
 		325F3F0824C8D12000A1B298 /* RSSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 325F3F0724C8D12000A1B298 /* RSSearchTableViewCell.m */; };
 		325F3F0B24C8D13B00A1B298 /* RSSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 325F3F0A24C8D13B00A1B298 /* RSSearchTableViewController.m */; };
 		32797B9E24C775650046D02C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32797B9D24C775650046D02C /* LaunchScreen.storyboard */; };
@@ -31,6 +34,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3225885024C8DA96003F4685 /* RSVideosService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSVideosService.h; sourceTree = "<group>"; };
+		3225885124C8DA96003F4685 /* RSVideosService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSVideosService.m; sourceTree = "<group>"; };
+		3225885824C8E02B003F4685 /* RSTedXMLParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSTedXMLParser.h; sourceTree = SOURCE_ROOT; };
+		3225885924C8E02B003F4685 /* RSTedXMLParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSTedXMLParser.m; sourceTree = SOURCE_ROOT; };
+		3225885B24C8E066003F4685 /* RSTedVideoContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSTedVideoContent.h; sourceTree = "<group>"; };
+		3225885C24C8E066003F4685 /* RSTedVideoContent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSTedVideoContent.m; sourceTree = "<group>"; };
 		325F3F0624C8D12000A1B298 /* RSSearchTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSSearchTableViewCell.h; sourceTree = "<group>"; };
 		325F3F0724C8D12000A1B298 /* RSSearchTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSSearchTableViewCell.m; sourceTree = "<group>"; };
 		325F3F0924C8D13B00A1B298 /* RSSearchTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSSearchTableViewController.h; sourceTree = "<group>"; };
@@ -72,12 +81,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3225885324C8DAA2003F4685 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				3225885024C8DA96003F4685 /* RSVideosService.h */,
+				3225885124C8DA96003F4685 /* RSVideosService.m */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		3225885724C8DFF9003F4685 /* parsers */ = {
+			isa = PBXGroup;
+			children = (
+				3225885824C8E02B003F4685 /* RSTedXMLParser.h */,
+				3225885924C8E02B003F4685 /* RSTedXMLParser.m */,
+			);
+			path = parsers;
+			sourceTree = "<group>";
+		};
 		325F3F0524C8D0E500A1B298 /* search */ = {
 			isa = PBXGroup;
 			children = (
+				325F3F0C24C8D14F00A1B298 /* table */,
 				32797B9F24C7794F0046D02C /* RSSearchTabViewController.h */,
 				32797BA024C7794F0046D02C /* RSSearchTabViewController.m */,
-				325F3F0C24C8D14F00A1B298 /* table */,
 			);
 			path = search;
 			sourceTree = "<group>";
@@ -140,7 +167,11 @@
 				32797B9D24C775650046D02C /* LaunchScreen.storyboard */,
 				32E17DE624C7694C005801E3 /* main.m */,
 				32E17DDD24C7694B005801E3 /* rs_ios_stage2_task7.xcdatamodeld */,
+				3225885B24C8E066003F4685 /* RSTedVideoContent.h */,
+				3225885C24C8E066003F4685 /* RSTedVideoContent.m */,
 				32797BA224C779520046D02C /* tabs */,
+				3225885724C8DFF9003F4685 /* parsers */,
+				3225885324C8DAA2003F4685 /* services */,
 				32A9487124C8C8B300515D6E /* categories */,
 			);
 			path = "rs.ios-stage2-task7";
@@ -257,9 +288,12 @@
 				32E17DE724C7694C005801E3 /* main.m in Sources */,
 				32797BA124C7794F0046D02C /* RSSearchTabViewController.m in Sources */,
 				325F3F0B24C8D13B00A1B298 /* RSSearchTableViewController.m in Sources */,
+				3225885A24C8E02B003F4685 /* RSTedXMLParser.m in Sources */,
 				32E17DD924C7694B005801E3 /* RSFavouritesViewController.m in Sources */,
 				325F3F0824C8D12000A1B298 /* RSSearchTableViewCell.m in Sources */,
+				3225885D24C8E066003F4685 /* RSTedVideoContent.m in Sources */,
 				32E17DD324C7694B005801E3 /* AppDelegate.m in Sources */,
+				3225885224C8DA96003F4685 /* RSVideosService.m in Sources */,
 				32A9487024C8C86400515D6E /* UIColor+RSColors.m in Sources */,
 				32E17DDF24C7694B005801E3 /* rs_ios_stage2_task7.xcdatamodeld in Sources */,
 			);

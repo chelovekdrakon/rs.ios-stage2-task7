@@ -10,7 +10,7 @@
 #import "RSSearchTabViewController.h"
 #import "RSSearchTableViewController.h"
 
-@interface RSSearchTabViewController () 
+@interface RSSearchTabViewController () <UISearchBarDelegate>
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) RSSearchTableViewController *tableViewController;
 @end
@@ -31,6 +31,7 @@
 
 - (void)layoutScreen {
     self.searchBar = [UISearchBar new];
+    self.searchBar.delegate = self;
     self.searchBar.barStyle = UIBarStyleBlack;
     self.searchBar.tintColor = [UIColor whiteColor];
     self.searchBar.barTintColor = [UIColor blackColor];
@@ -40,8 +41,6 @@
         self.searchBar.searchTextField.backgroundColor = [UIColor darkGrayColor];
         self.searchBar.searchTextField.leftView.tintColor = [UIColor whiteColor];
         self.searchBar.searchTextField.textColor = [UIColor whiteColor];
-    } else {
-        // Fallback on earlier versions
     }
     
     [self.view addSubview:self.searchBar];
@@ -64,6 +63,16 @@
         [self.tableViewController.view.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor],
         [self.tableViewController.view.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor],
     ]];
+}
+
+#pragma mark - UISearchBar Delegate;
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    NSLog(@"DidEndEditing: %@", searchBar.text);
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    NSLog(@"DidChange: %@", searchText);
 }
 
 @end
