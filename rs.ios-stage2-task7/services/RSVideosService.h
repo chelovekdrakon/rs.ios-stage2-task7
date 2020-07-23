@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSURLSession *session;
 
 + (RSVideosService *)sharedService;
-- (void)loadVideos:(void (^)(NSMutableArray <RSTedVideoContent *> *videos, NSError *error))completion;
+- (void)getVideos:(void (^)(NSMutableArray <RSTedVideoContent *> *videos, NSError *error))completion;
 
 @end
 

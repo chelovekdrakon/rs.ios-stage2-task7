@@ -13,36 +13,28 @@
 
 @interface RSSearchTableViewController () <UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic, strong) UITableView *tableView;
-@property(nonatomic, strong) NSMutableArray *dataSource;
+@property(nonatomic, copy) NSArray *dataSource;
 @end
 
-@implementation RSSearchTableViewController
+@implementation RSSearchTableViewController {
+    NSString *_searchText;
+}
+
+@synthesize searchText;
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.dataSource = [NSMutableArray array];
+        self.dataSource = [NSArray array];
+        _searchText = @"";
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    __weak typeof(self) weakSelf = self;
-    
-    dispatch_async(dispatch_get_global_queue(QOS_CLASS_UTILITY, 0), ^{
-        [[RSVideosService sharedService] loadVideos:^(NSMutableArray * _Nonnull videos, NSError * _Nonnull error) {
-            if (!error) {
-                weakSelf.dataSource = videos;
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [weakSelf.tableView reloadData];
-                });
-            }
-        }];
-        
-    });
+ 
+    [self initTableViewDataSource];
     
     self.tableView = [UITableView new];
     self.tableView.delegate = self;
@@ -61,6 +53,33 @@
         [self.tableView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor],
         [self.tableView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor],
     ]];
+}
+
+- (void)initTableViewDataSource {
+    __weak typeof(self) weakSelf = self;
+    
+    [[RSVideosService sharedService] getVideos:^(NSMutableArray * _Nonnull videos, NSError * _Nonnull error) {
+        if (!error) {
+            weakSelf.dataSource = videos;
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.tableView reloadData];
+            });
+        }
+    }];
+}
+
+- (void)filterTableViewDataSource:(NSString *)text {
+    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(RSTedVideoContent *video, NSDictionary<NSString *,id> *bindings) {
+        if ([video.title.lowercaseString containsString:text.lowercaseString]) {
+            return true;
+        } else {
+            return false;
+        }
+    }];
+    NSArray *resultDataSource = [self.dataSource filteredArrayUsingPredicate:predicate];
+    self.dataSource = resultDataSource;
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableView Data Source
@@ -113,6 +132,23 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 120.0f;
+}
+
+#pragma mark - KVC
+
+- (NSString *)searchText {
+    return _searchText;
+}
+
+- (void)setSearchText:(NSString *)searchText {
+    [self willChangeValueForKey:@"searchText"];
+    if (_searchText.length > 0 && searchText.length == 0) {
+        [self initTableViewDataSource];
+    } else {
+        [self filterTableViewDataSource:searchText];
+    }
+    _searchText = searchText;
+    [self didChangeValueForKey:@"searchText"];
 }
 
 @end

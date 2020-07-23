@@ -10,7 +10,7 @@
 #import "RSSearchTabViewController.h"
 #import "RSSearchTableViewController.h"
 
-@interface RSSearchTabViewController () <UISearchBarDelegate>
+@interface RSSearchTabViewController () <UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UISearchResultsUpdating>
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) RSSearchTableViewController *tableViewController;
 @end
@@ -65,14 +65,18 @@
     ]];
 }
 
-#pragma mark - UISearchBar Delegate;
-
-- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
-    NSLog(@"DidEndEditing: %@", searchBar.text);
-}
+#pragma mark - UISearchBar Delegate
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    NSLog(@"DidChange: %@", searchText);
+    self.tableViewController.searchText = searchText;
+}
+
+#pragma mark - UISearchController Delegate
+
+#pragma mark - UISearchResults Updating
+
+- (void)updateSearchResultsForSearchController:(nonnull UISearchController *)searchController {
+    NSLog(@"update search results");
 }
 
 @end
