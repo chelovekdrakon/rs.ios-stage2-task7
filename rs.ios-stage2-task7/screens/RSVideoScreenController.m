@@ -9,6 +9,7 @@
 #import "RSVideoScreenController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
+#import "RSVideoProvider.h"
 
 @interface RSVideoScreenController ()
 @property (nonatomic, strong) RSTedVideoContent *video;
@@ -157,7 +158,15 @@
 }
 
 - (void)handleSharePress:(UIButton *)button {
-    NSLog(@"Share!");
+    NSMutableArray *items = [NSMutableArray array];
+    
+    NSURL *placeholderItemURL = [self getPlaceholderItemUrl];
+    
+    RSVideoProvider *videoProvider = [[RSVideoProvider alloc] initWithPlaceholderItem:placeholderItemURL video:self.video];
+    [items addObject:videoProvider];
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
+    [self presentViewController:activityVC animated:YES completion:nil];
 }
 
 - (void)handlePlayPress:(UIButton *)button {
@@ -172,6 +181,37 @@
         _playerVC.showsPlaybackControls = YES;
     }
     return _playerVC;
+}
+
+#pragma mark - Helpers
+
+- (NSURL *)getPlaceholderItemUrl {
+    NSURL *tmpDir = [NSURL fileURLWithPath:NSTemporaryDirectory() isDirectory:YES];
+    NSURL *fileURL = [tmpDir URLByAppendingPathComponent:self.video.videoUrl.lastPathComponent];
+    NSURL *outptVideoUrl = [NSURL fileURLWithPath:fileURL.absoluteString];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+
+    if (![fileManager fileExistsAtPath:outptVideoUrl.path]){
+      AVMutableComposition *mainComposition = [AVMutableComposition composition];
+      
+      [mainComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
+      [mainComposition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
+      
+      AVAssetExportSession *exporter = [[AVAssetExportSession alloc] initWithAsset:mainComposition presetName:AVAssetExportPreset640x480];
+      exporter.outputURL = outptVideoUrl;
+      exporter.outputFileType = AVFileTypeMPEG4;
+      
+      dispatch_semaphore_t sem = dispatch_semaphore_create(0);
+      
+      [exporter exportAsynchronouslyWithCompletionHandler:^{
+          dispatch_semaphore_signal(sem);
+      }];
+      
+      dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+    }
+    
+    return outptVideoUrl;
 }
 
 @end

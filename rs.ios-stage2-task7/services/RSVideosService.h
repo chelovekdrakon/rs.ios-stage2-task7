@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (RSVideosService *)sharedService;
 - (void)getVideos:(void (^)(NSMutableArray <RSTedVideoContent *> *videos, NSError *error))completion;
+- (void)downloadVideoFromUrl:(NSURL *)url completion:(void (^)(NSURL *path, NSError *error))completion;
 
 @end
 

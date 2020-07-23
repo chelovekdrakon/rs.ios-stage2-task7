@@ -9,9 +9,11 @@
 #import "RSVideosService.h"
 #import "RSTedXMLParser.h"
 
-@interface RSVideosService ()
+@interface RSVideosService () <NSURLSessionDownloadDelegate>
 @property (nonatomic, strong) RSTedXMLParser *parser;
 @property (nonatomic, strong) NSMutableArray<RSTedVideoContent *> *videos;
+
+@property (nonatomic, copy) void (^onDownloadComplete)(NSURL *path, NSError *error);
 @end
 
 @implementation RSVideosService
@@ -19,7 +21,12 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _session = [NSURLSession sharedSession];
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
+                                                              delegate:self
+                                                         delegateQueue:nil];
+        
+        
+        _session = session;
         _parser = [RSTedXMLParser new];
     }
     return self;
@@ -58,6 +65,34 @@
     }];
     
     [dataTask resume];
+}
+
+- (void)downloadVideoFromUrl:(NSURL *)url completion:(void (^)(NSURL *path, NSError *error))completion {
+    self.onDownloadComplete = completion;
+    
+    NSURLSessionDownloadTask *downloadingTask = [self.session downloadTaskWithURL:url];
+    [downloadingTask resume];
+}
+
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
+    if (self.onDownloadComplete) {
+        self.onDownloadComplete(nil, error);
+        self.onDownloadComplete = nil;
+    }
+}
+
+- (void)URLSession:(NSURLSession *)session didBecomeInvalidWithError:(NSError *)error {
+    if (self.onDownloadComplete) {
+        self.onDownloadComplete(nil, error);
+        self.onDownloadComplete = nil;
+    }
+}
+
+- (void)URLSession:(nonnull NSURLSession *)session downloadTask:(nonnull NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(nonnull NSURL *)location {
+    if (self.onDownloadComplete) {
+        self.onDownloadComplete(location, nil);
+        self.onDownloadComplete = nil;
+    }
 }
 
 @end

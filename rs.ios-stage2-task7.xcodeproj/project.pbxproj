@@ -23,6 +23,7 @@
 		32E17DE124C7694C005801E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32E17DE024C7694C005801E3 /* Assets.xcassets */; };
 		32E17DE724C7694C005801E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E17DE624C7694C005801E3 /* main.m */; };
 		32E17DF124C7694C005801E3 /* rs_ios_stage2_task7Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E17DF024C7694C005801E3 /* rs_ios_stage2_task7Tests.m */; };
+		32E1A52124CA413700F7AB6A /* RSVideoProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E1A52024CA413700F7AB6A /* RSVideoProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		32E17DEC24C7694C005801E3 /* rs.ios-stage2-task7Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "rs.ios-stage2-task7Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E17DF024C7694C005801E3 /* rs_ios_stage2_task7Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rs_ios_stage2_task7Tests.m; sourceTree = "<group>"; };
 		32E17DF224C7694C005801E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32E1A51F24CA413700F7AB6A /* RSVideoProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSVideoProvider.h; sourceTree = "<group>"; };
+		32E1A52024CA413700F7AB6A /* RSVideoProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSVideoProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 			children = (
 				3215C44424CA2EC8005B8CB3 /* RSVideoScreenController.h */,
 				3215C44524CA2EC8005B8CB3 /* RSVideoScreenController.m */,
+				32E1A51F24CA413700F7AB6A /* RSVideoProvider.h */,
+				32E1A52024CA413700F7AB6A /* RSVideoProvider.m */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 				32797BA124C7794F0046D02C /* RSSearchTabViewController.m in Sources */,
 				325F3F0B24C8D13B00A1B298 /* RSSearchTableViewController.m in Sources */,
 				325DD3D224CA1D5E006F067D /* RSPaddingsLabel.m in Sources */,
+				32E1A52124CA413700F7AB6A /* RSVideoProvider.m in Sources */,
 				3225885A24C8E02B003F4685 /* RSTedXMLParser.m in Sources */,
 				32E17DD924C7694B005801E3 /* RSFavouritesViewController.m in Sources */,
 				325F3F0824C8D12000A1B298 /* RSSearchTableViewCell.m in Sources */,
