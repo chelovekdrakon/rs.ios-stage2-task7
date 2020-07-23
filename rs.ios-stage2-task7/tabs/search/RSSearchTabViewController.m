@@ -71,12 +71,8 @@
     self.tableViewController.searchText = searchText;
 }
 
-#pragma mark - UISearchController Delegate
-
-#pragma mark - UISearchResults Updating
-
-- (void)updateSearchResultsForSearchController:(nonnull UISearchController *)searchController {
-    NSLog(@"update search results");
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.searchBar resignFirstResponder];
 }
 
 @end

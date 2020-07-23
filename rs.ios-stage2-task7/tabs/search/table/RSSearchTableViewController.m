@@ -39,8 +39,9 @@
     self.tableView = [UITableView new];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor blackColor];
+    self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self.tableView registerClass:RSSearchTableViewCell.class forCellReuseIdentifier:[RSSearchTableViewCell cellId]];
