@@ -39,6 +39,10 @@
     self.navigationItem.leftBarButtonItem = backButton;
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    self.navigationController.navigationBar.hidden = YES;
+}
+
 - (void)layoutScreen {
     UIImage *image;
     if (self.video.imageData) {
