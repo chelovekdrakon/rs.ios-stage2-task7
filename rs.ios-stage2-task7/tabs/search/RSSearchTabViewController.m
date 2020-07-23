@@ -10,7 +10,7 @@
 #import "RSSearchTabViewController.h"
 #import "RSSearchTableViewController.h"
 
-@interface RSSearchTabViewController () <UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UISearchResultsUpdating>
+@interface RSSearchTabViewController () <UISearchBarDelegate>
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) RSSearchTableViewController *tableViewController;
 @end
