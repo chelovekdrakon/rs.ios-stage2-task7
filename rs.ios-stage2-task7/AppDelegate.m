@@ -34,6 +34,8 @@
     tabBarController.tabBar.translucent = NO;
     
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:tabBarController];
+    nc.navigationBar.barStyle = UIBarStyleBlack;
+    nc.navigationItem.hidesBackButton = YES;
     nc.navigationBar.hidden = YES;
     
     UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
