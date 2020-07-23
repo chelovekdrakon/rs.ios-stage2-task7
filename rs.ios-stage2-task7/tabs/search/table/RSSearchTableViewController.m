@@ -8,6 +8,7 @@
 
 #import "RSVideosService.h"
 #import "UIColor+RSColors.h"
+#import "RSVideoScreenController.h"
 #import "RSSearchTableViewController.h"
 #import "RSSearchTableViewCell.h"
 
@@ -129,6 +130,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    RSTedVideoContent *video = self.dataSource[indexPath.row];
+    
+    RSVideoScreenController *videoScreenVC = [[RSVideoScreenController alloc] initWithRSVideo:video];
+    
+    [self.navigationController pushViewController:videoScreenVC animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -33,8 +33,11 @@
     tabBarController.tabBar.unselectedItemTintColor = [UIColor lightGrayColor];
     tabBarController.tabBar.translucent = NO;
     
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:tabBarController];
+    nc.navigationBar.hidden = YES;
+    
     UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    window.rootViewController = tabBarController;
+    window.rootViewController = nc;
     
     self.window = window;
     [self.window makeKeyAndVisible];

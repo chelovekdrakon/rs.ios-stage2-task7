@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3215C44624CA2EC8005B8CB3 /* RSVideoScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3215C44524CA2EC8005B8CB3 /* RSVideoScreenController.m */; };
 		3225885224C8DA96003F4685 /* RSVideosService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3225885124C8DA96003F4685 /* RSVideosService.m */; };
 		3225885A24C8E02B003F4685 /* RSTedXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3225885924C8E02B003F4685 /* RSTedXMLParser.m */; };
 		3225885D24C8E066003F4685 /* RSTedVideoContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3225885C24C8E066003F4685 /* RSTedVideoContent.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3215C44424CA2EC8005B8CB3 /* RSVideoScreenController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSVideoScreenController.h; sourceTree = "<group>"; };
+		3215C44524CA2EC8005B8CB3 /* RSVideoScreenController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSVideoScreenController.m; sourceTree = "<group>"; };
 		3225885024C8DA96003F4685 /* RSVideosService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSVideosService.h; sourceTree = "<group>"; };
 		3225885124C8DA96003F4685 /* RSVideosService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSVideosService.m; sourceTree = "<group>"; };
 		3225885824C8E02B003F4685 /* RSTedXMLParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSTedXMLParser.h; sourceTree = SOURCE_ROOT; };
@@ -84,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3215C44724CA2ECB005B8CB3 /* screens */ = {
+			isa = PBXGroup;
+			children = (
+				3215C44424CA2EC8005B8CB3 /* RSVideoScreenController.h */,
+				3215C44524CA2EC8005B8CB3 /* RSVideoScreenController.m */,
+			);
+			path = screens;
+			sourceTree = "<group>";
+		};
 		3225885324C8DAA2003F4685 /* services */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +196,7 @@
 				3225885C24C8E066003F4685 /* RSTedVideoContent.m */,
 				32797BA224C779520046D02C /* tabs */,
 				3225885724C8DFF9003F4685 /* parsers */,
+				3215C44724CA2ECB005B8CB3 /* screens */,
 				3225885324C8DAA2003F4685 /* services */,
 				32A9487124C8C8B300515D6E /* categories */,
 			);
@@ -298,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3215C44624CA2EC8005B8CB3 /* RSVideoScreenController.m in Sources */,
 				32E17DE724C7694C005801E3 /* main.m in Sources */,
 				32797BA124C7794F0046D02C /* RSSearchTabViewController.m in Sources */,
 				325F3F0B24C8D13B00A1B298 /* RSSearchTableViewController.m in Sources */,

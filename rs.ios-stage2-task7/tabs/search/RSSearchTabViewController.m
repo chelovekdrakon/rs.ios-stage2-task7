@@ -20,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tabBarController.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = YES;
+    
     [self layoutScreen];
 }
 
